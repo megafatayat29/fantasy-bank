@@ -1,0 +1,364 @@
+{
+	"info": {
+		"_postman_id": "61e844a6-aaab-44cb-b7af-902541d15ab9",
+		"name": "BankEnigmaAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AccountAPI",
+			"item": [
+				{
+					"name": "createAccount",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Boyce Avenue\",\n    \"email\": \"boyce@avenue.com\",\n    \"phone\": \"085434343534\",\n    \"address\": \"Jl Kebahagiaan\",\n    \"biologicalMomName\": \"Ariana Grande\",\n    \"accountNumber\": \"1408978989981111\",\n    \"password\": \"12345678\",\n    \"userName\": \"boyceAvenue\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "signIn",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"boyceganteng\",\n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/signIn",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"signIn"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "uploadProfilePicture",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiYm95Y2VnYW50ZW5nIiwidXNlcm5hbWUiOiJib3ljZWdhbnRlbmciLCJzdWIiOiJib3ljZWdhbnRlbmciLCJpYXQiOjE2MzMxODE5MzUsImV4cCI6MTYzMzE4NDkzNX0.z1fHlJHwRAvyMmcye6Kp8zPS7J9DmtbvWH3XKhV_gef3ryKTzqf2Rgz4xzUCeu7JZIgiKld-IFfbwVcLOYOsCA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "profilePicture",
+									"type": "file",
+									"src": "/home/dell/Pictures/boyceAvenue.jpeg"
+								},
+								{
+									"key": "id",
+									"value": "8a8ab2a07c412cfb017c412ff8af0000",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "localhost:8081/upload",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"upload"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getProfilePicture",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiYm95Y2VnYW50ZW5nIiwidXNlcm5hbWUiOiJib3ljZWdhbnRlbmciLCJzdWIiOiJib3ljZWdhbnRlbmciLCJpYXQiOjE2MzMxODQxMTYsImV4cCI6MTYzMzE4NzExNn0.BonYXI6AiGCGS2HRW_BsJzubXzgJGhcfBuJrDv0PLUcAh4I0PY6CT888AaznR0b3SRNWed472GY6pqt1WFdNWg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/profilePicture/8a8ab2a07c412cfb017c412ff8af0000.jpeg",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"profilePicture",
+								"8a8ab2a07c412cfb017c412ff8af0000.jpeg"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "WalletAPI",
+			"item": [
+				{
+					"name": "createWallet",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiYm95Y2VnYW50ZW5nIiwidXNlcm5hbWUiOiJib3ljZWdhbnRlbmciLCJzdWIiOiJib3ljZWdhbnRlbmciLCJpYXQiOjE2MzMxODQxMTYsImV4cCI6MTYzMzE4NzExNn0.BonYXI6AiGCGS2HRW_BsJzubXzgJGhcfBuJrDv0PLUcAh4I0PY6CT888AaznR0b3SRNWed472GY6pqt1WFdNWg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Dana Darurat\",\n    \"balance\": 15000000,\n    \"accountId\": \"8a8ab2a07c412cfb017c412ff8af0000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/wallet",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"wallet"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "savingMoney",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiYm95Y2VnYW50ZW5nIiwidXNlcm5hbWUiOiJib3ljZWdhbnRlbmciLCJzdWIiOiJib3ljZWdhbnRlbmciLCJpYXQiOjE2MzMyNDgwNTMsImV4cCI6MTYzMzI1MTA1M30.-VMR8M1DIzMIBOCjSgwNdoVpZYKgavkmLgK5Em3OU_hGp7CYTMkyzTCWuap9kSqg1txv4Txt7p1ABN6YpmDv-A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"walletId\": \"8a8ab2a07c41691a017c416fa65a0001\",\n    \"nominal\": 5000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/saving",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"saving"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "withdrawMoney",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiYm95Y2VnYW50ZW5nIiwidXNlcm5hbWUiOiJib3ljZWdhbnRlbmciLCJzdWIiOiJib3ljZWdhbnRlbmciLCJpYXQiOjE2MzMyNDUyMDgsImV4cCI6MTYzMzI0ODIwOH0.HSjA3dBqsOsuNl1bqI5AnDTgscHSOR0s287txT90gVSxfBf2xMyRxheHAFagxfWdq6NIaPdS_su_TAuHuyTXaA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"walletId\": \"8a8ab2a07c41691a017c416fa65a0001\",\n    \"nominal\": 10000\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/withdrawal",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"withdrawal"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "payMerchantBill",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiYm95Y2VnYW50ZW5nIiwidXNlcm5hbWUiOiJib3ljZWdhbnRlbmciLCJzdWIiOiJib3ljZWdhbnRlbmciLCJpYXQiOjE2MzMyNTExNzksImV4cCI6MTYzMzI1NDE3OX0.vggHjG6UXndgr9alCxe-GYkysTKljMAkjIRD7pKS99zqlN7F80xaBZVIyP_gfFokm2ksxrdWOJ68xUdvGgfVEg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"merchantId\": \"8a8ab2a07c45019e017c45043a1a0005\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/bill-payment",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"bill-payment"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "MerchantAPI",
+			"item": [
+				{
+					"name": "createMerchantBill",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiYm95Y2VnYW50ZW5nIiwidXNlcm5hbWUiOiJib3ljZWdhbnRlbmciLCJzdWIiOiJib3ljZWdhbnRlbmciLCJpYXQiOjE2MzMyNDU0MTYsImV4cCI6MTYzMzI0ODQxNn0.08Zl9dMLPUTU9B_KgjCj8vxLzSMoyV9RS6hjwcEml1P2fSLPH7z5q22J9TacibXoKQ0PYSpSddWvqUdH5ll2HQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"PDAM\",\n    \"bill\": 153000,\n    \"walletId\": \"8a8ab2a07c41691a017c416b30e70000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/merchant",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"merchant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJyb2xlIjoiYm95Y2VnYW50ZW5nIiwidXNlcm5hbWUiOiJib3ljZWdhbnRlbmciLCJzdWIiOiJib3ljZWdhbnRlbmciLCJpYXQiOjE2MzMyMzM1NDAsImV4cCI6MTYzMzIzNjU0MH0.Q7ZlVLFbZKDLtSjZZobjiJd9FyzNsjLrzKecxXGcExwfWwoajjIBn-7-sOyByzrbSK2WCR70FHOI1Lo3ML2kpA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/merchant/8a8ab2a07c442659017c442b1b770000",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"merchant",
+								"8a8ab2a07c442659017c442b1b770000"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
